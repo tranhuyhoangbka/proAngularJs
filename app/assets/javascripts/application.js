@@ -14,7 +14,9 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require angular/angular.min
+//= require angular-rails-templates
+//= require_tree ./templates
 //= require angular/lib/lodash
 //= require_tree ./angular/app
-//= require_true ./angular/filters
+//= require_tree ./angular/filters
 //= require_tree ./angular/controllers

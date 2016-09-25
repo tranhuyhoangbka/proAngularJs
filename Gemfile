@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem "angular-rails-templates"
 gem "faker"
 gem "bootstrap-sass"
 gem "responders"

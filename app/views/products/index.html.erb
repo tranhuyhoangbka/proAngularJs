@@ -2,11 +2,11 @@
 <div class="navbar navbar-inverse">
   <a href="" class="navbar-brand">SPORT STORE</a>
 </div>
-<div class="panel panel-default row" ng-app="sportsStore">
-  <div class="col-md-3">
-    Categories
+
+<div class="panel panel-default row" ng-app="sportsStore" ng-controller="sportsStoreCtrl">
+  <div class="alert alert-danger" ng-show="data.error">
+    Error ({{data.error.status}}). The product data was not loaded.
+    <%= link_to "Click here to try again", products_path %>
   </div>
-  <div class="col-md-8">
-    products
-  </div>
+  <ng-include src="'productList.html'"></ng-include>
 </div>
