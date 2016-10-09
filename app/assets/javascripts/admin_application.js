@@ -1,0 +1,11 @@
+//= require jquery
+//= require jquery_ujs
+//= require bootstrap
+//= require angular/angular.min
+//= require angular-rails-templates
+//= require angular/ngmodules/angular-route.min
+//= require angular/ngmodules/angular-resource.min
+//= require_tree ./templates/admin
+//= require angular/lib/lodash
+//= require angular/app/admin/sports-store
+//= require_tree ./angular/controllers/admin

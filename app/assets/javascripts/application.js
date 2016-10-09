@@ -15,8 +15,10 @@
 //= require bootstrap
 //= require angular/angular.min
 //= require angular-rails-templates
+//= require angular/ngmodules/angular-route.min
 //= require_tree ./templates
 //= require angular/lib/lodash
+//= require_tree ./angular/components
 //= require_tree ./angular/app
 //= require_tree ./angular/filters
 //= require_tree ./angular/controllers

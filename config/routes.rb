@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
+  devise_for :users
   root "pages#home"
   get '/todo.html' => "pages#todo"
+  get '/example_part2' => "pages#example_part2"
   resources :action_list, only: [:index], defaults: {format: "json"}
   get '/jsdemo.html' => "pages#jsdemo"
   resources :products
+  resources :orders, only: [:create, :index], defaults: {format: "json"}
+  resources :auths, defaults: {format: "json"}
+  delete '/logout' => "auths#destroy", as: :logout
+  resources :admins
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -9,4 +9,8 @@ class PagesController < ApplicationController
   def jsdemo
 
   end
+
+  def example_part2
+
+  end
 end

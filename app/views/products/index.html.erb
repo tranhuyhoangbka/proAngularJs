@@ -1,12 +1,17 @@
 <% content_for :title, "SportStore" %>
-<div class="navbar navbar-inverse">
-  <a href="" class="navbar-brand">SPORT STORE</a>
-</div>
+<ng-app ng-app="sportsStore">
+  <ng-controller ng-controller="sportsStoreCtrl">
+    <div class="navbar navbar-inverse">
+      <a href="" class="navbar-brand">SPORT STORE</a>
+      <cart-sumary />
+    </div>
 
-<div class="panel panel-default row" ng-app="sportsStore" ng-controller="sportsStoreCtrl">
-  <div class="alert alert-danger" ng-show="data.error">
-    Error ({{data.error.status}}). The product data was not loaded.
-    <%= link_to "Click here to try again", products_path %>
-  </div>
-  <ng-include src="'productList.html'"></ng-include>
-</div>
+    <div class="panel panel-default row">
+      <div class="alert alert-danger" ng-show="data.error">
+        Error ({{data.error.status}}). The product data was not loaded.
+        <%= link_to "Click here to try again", products_path %>
+      </div>
+      <ng-view />
+    </div>
+  </ng-controller>
+</ng-app>
