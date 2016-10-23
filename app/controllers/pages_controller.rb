@@ -13,4 +13,16 @@ class PagesController < ApplicationController
   def example_part2
 
   end
+
+  def directive
+
+  end
+
+  def form
+
+  end
+
+  def ngcontroller
+
+  end
 end

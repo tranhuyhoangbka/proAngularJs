@@ -1,0 +1,10 @@
+<% content_for :title, "Controllers" %>
+<div class="row" ng-app="commonApp">
+  <div class="well" ng-controller="simpleController">
+    <label>Select a City:</label>
+    <select ng-options="city for city in cities" ng-model="city">
+    </select>
+    <p>The city is: {{city}}</p>
+    <p>The country is: {{getCountry() || 'Unknow'}}</p>
+  </div>
+</div>

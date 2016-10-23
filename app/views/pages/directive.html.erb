@@ -1,0 +1,97 @@
+<% content_for :title, "directive - angular" %>
+<style>
+  .Red {background-color: lightcoral;}
+  .Green {background-color: lightgreen;}
+  .Blue {background-color: lightblue;}
+  .Red {background-color: red;}
+</style>
+<div ng-app="directiveExApp">
+  <div ng-controller="defaultController">
+    <div id="todoPanel" class="panel" ng-cloak>
+      <h3 class="panel-header">To Do List</h3>
+      <div class="well" tap="message = 'Tapped!'">
+        {{message}}
+      </div>
+      <div class="checkbox well">
+        <label for="">
+          <input type="checkbox" ng-model="dataValue"> Set the data value
+        </label>
+      </div>
+      <button class="btn btn-success" ng-disabled="dataValue">My Button</button>
+      <div class="well">
+        <span ng-repeat="button in buttonNames">
+          <button class="btn btn-info" ng-click="data.rowColor = button">
+            {{button}}
+          </button>
+        </span>
+      </div>
+      <div class="row well">
+        <div class="col-xs-6" ng-repeat="(key, value) in settings">
+          <h4>{{key}}</h4>
+          <div class="radio" ng-repeat="button in buttonNames">
+            <label>
+              <input type="radio" value="{{button}}" ng-model="settings[key]">
+              {{button}}
+            </label>
+          </div>
+        </div>
+      </div>
+      <div ng-bind="showText()"></div>
+      <div class="checkbox well">
+        <label>
+          <input type="checkbox" ng-model="todos[2].complete">
+          Item 3 is complete
+        </label>
+      </div>
+      <script type="text/ng-template" id="/table.html">
+        <table class="table">
+          <thead>
+            <tr>
+              <td>#</td>
+              <td>Action</td>
+              <td>Done</td>
+            </tr>
+          </thead>
+          <tbody>
+           <tr ng-repeat="item in todos" ng-class="data.rowColor" ng-mouseenter="handleEvent($event)" ng-mouseleave="handleEvent($event)">
+             <td ng-bind="$index + 1"></td>
+             <td ng-bind="item.action"></td>
+             <td ng-class="data.columnColor">
+               {{item.complete}}
+             </td>
+           </tr>
+          </tbody>
+        </table>
+      </script>
+      <div class="well">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" ng-model="showList"> Use the list view
+          </label>
+        </div>
+      </div>
+      <div ng-include="viewFile()" onload="reportChange()"></div>
+      <hr>
+      More Content......
+      <div class="well">
+        <div class="radio" ng-repeat="button in ['None', 'Table', 'List']">
+          <label>
+            <input type="radio" ng-model="data.mode" value="{{button}}"
+              ng-checked="$first"> {{button}}
+          </label>
+        </div>
+      </div>
+      <div ng-switch on="data.mode">
+        <div ng-switch-when="Table">
+          <ng-include src="'/table.html'"></ng-include>
+        </div>
+        <div ng-switch-when="List">
+          <ng-include src="'list.html'"></ng-include>
+        </div>
+        <div ng-switch-default>
+          Select another option to display a layout
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

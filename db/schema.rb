@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161009085637) do
+ActiveRecord::Schema.define(version: 20161009065803) do
 
   create_table "actions", force: :cascade do |t|
     t.text     "desc",       limit: 65535
