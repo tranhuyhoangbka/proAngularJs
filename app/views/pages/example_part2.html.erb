@@ -1,9 +1,9 @@
 <% content_for :title, "AngularJs Demo" %>
 <div ng-app="exampleApp">
-  <div ng-controller="dayController" class="panel">
+  <div ng-controller="dayController" class="panel" highlight="Monday">
     <div class="page-header">
       <h3>AngularJS App</h3>
     </div>
-    <h4>Today is {{day || "(unknow)"}}</h4>
+    <h4>Today is {{day || "(unknow)" | dayName}}</h4>
   </div>
 </div>

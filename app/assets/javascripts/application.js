@@ -20,5 +20,7 @@
 //= require angular/lib/lodash
 //= require_tree ./angular/components
 //= require_tree ./angular/app
+//= require_tree ./angular/services
 //= require_tree ./angular/filters
+//= require_tree ./angular/directives
 //= require_tree ./angular/controllers

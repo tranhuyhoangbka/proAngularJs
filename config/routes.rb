@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   root "pages#home"
   get '/todo.html' => "pages#todo"
   get '/example_part2' => "pages#example_part2"
+  get '/form.html' => "pages#form"
   resources :action_list, only: [:index], defaults: {format: "json"}
   get '/jsdemo.html' => "pages#jsdemo"
+  get '/directive.html' => "pages#directive"
   resources :products
   resources :orders, only: [:create, :index], defaults: {format: "json"}
   resources :auths, defaults: {format: "json"}
