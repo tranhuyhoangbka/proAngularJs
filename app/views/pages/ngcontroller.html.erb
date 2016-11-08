@@ -1,0 +1,42 @@
+<ng-app ng-app="commonApp">
+  <div class="well" ng-controller="firstController as vm">
+    <h4>First Controller</h4>
+    <div class="input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" ng-click="vm.reverseText()">
+          Reverse
+        </button>
+      </span>
+      <input class="form-control" ng-model="vm.dataValue">
+    </div>
+  </div>
+
+  <div class="well" ng-controller="secondController" id="angularRegion">
+    <script type="text/javascript">
+    $(document).ready(function() {
+      $('#jqui button').button().click(function(e) {
+        angular.element(angularRegion).scope().$apply('handleClick()');
+      });
+    });
+  </script>
+    <h4>Second Controller</h4>
+    <div class="input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" ng-click="changeCase()">
+          Case
+        </button>
+      </span>
+      <input class="form-control" ng-model="dataValue">
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" ng-model="buttonEnabled">Enable Button
+      </label>
+    </div>
+    <p>Click counter: <span ng-bind="clickCounter"></span></p>
+    <div id="jqui" class="well">
+      <h4>jquery UI</h4>
+      <button>Click Me!</button>
+    </div>
+  </div>
+</ng-app>

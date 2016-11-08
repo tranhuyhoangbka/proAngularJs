@@ -21,4 +21,12 @@ class PagesController < ApplicationController
   def form
 
   end
+
+  def ngcontroller
+
+  end
+
+  def filter
+
+  end
 end

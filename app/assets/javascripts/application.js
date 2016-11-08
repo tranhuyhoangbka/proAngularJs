@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require angular/angular.min
+//= require angular/lib/angular-locale_fr-fr
 //= require angular-rails-templates
 //= require angular/ngmodules/angular-route.min
 //= require_tree ./templates
@@ -24,3 +25,4 @@
 //= require_tree ./angular/filters
 //= require_tree ./angular/directives
 //= require_tree ./angular/controllers
+

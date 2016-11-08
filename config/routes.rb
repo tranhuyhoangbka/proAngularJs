@@ -7,11 +7,13 @@ Rails.application.routes.draw do
   resources :action_list, only: [:index], defaults: {format: "json"}
   get '/jsdemo.html' => "pages#jsdemo"
   get '/directive.html' => "pages#directive"
+  get "/controller.html" => "pages#ngcontroller"
   resources :products
   resources :orders, only: [:create, :index], defaults: {format: "json"}
   resources :auths, defaults: {format: "json"}
   delete '/logout' => "auths#destroy", as: :logout
   resources :admins
+  get "/filters.html" => "pages#filter"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
